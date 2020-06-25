@@ -17,15 +17,19 @@ export class UserProfile extends React.Component{
         super(props)
         this.state={
             edit:false,
-            firstname:props.user.first_name,
+            firstname:props.user.first_name, 
             lastname:props.user.last_name
         }
+    }
+    componentWillReceiveProps(nextProps){
+        this.setState({firstname:nextProps.user.first_name, lastname:nextProps.user.last_name})
     }
     changeHandler = (e)=>{
         this.setState({[e.target.name]:e.target.value})
     }
     render(){
-    let name=this.props.user.first_name +" " + this.props.user.last_name
+        
+        let name=this.props.user.first_name +" " + this.props.user.last_name
     return(
         <List className="">
             <ListItem alignItems="flex-start">

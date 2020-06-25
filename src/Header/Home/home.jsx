@@ -32,7 +32,7 @@ export default class Home extends Component {
             <div>
                 {
                     this.state.userDetail.map((value, index)=>{
-                        
+                    
                         return(
                             <UserProfile user={value} deleteUser={(data)=>{this.removeUsers(data)}} 
                             editUser={(index,fname,lname)=>{this.editUsers(index,fname,lname)}}
